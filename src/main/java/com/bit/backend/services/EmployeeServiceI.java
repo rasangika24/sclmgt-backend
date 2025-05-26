@@ -3,6 +3,7 @@ package com.bit.backend.services;
 import com.bit.backend.dtos.EmployeeDto;
 
 import java.util.List;
+import java.util.Map;
 
 public interface EmployeeServiceI {
 
@@ -13,4 +14,6 @@ public interface EmployeeServiceI {
     EmployeeDto updateEmployee(long id, EmployeeDto employeeDto);
 
     EmployeeDto deleteEmployee(long id);
+
+    List<Map<String, Object>> getTeachers();
 }

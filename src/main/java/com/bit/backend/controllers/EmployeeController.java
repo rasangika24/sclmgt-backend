@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class EmployeeController {
@@ -57,6 +58,16 @@ public class EmployeeController {
             return ResponseEntity.ok(responseEmployeeDto);
         } catch (Exception e) {
             throw new AppException("Failed to delete employee records. Please try again later." + e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/employee/get-teachers-list")
+    public ResponseEntity<List<Map<String, Object>>> getTeachers(){
+        try {
+            List<Map<String, Object>> teacherList = employeeServiceI.getTeachers();
+            return ResponseEntity.ok(teacherList);
+        }catch (Exception e){
+            throw new AppException("Request Fail With Error:"+ e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
