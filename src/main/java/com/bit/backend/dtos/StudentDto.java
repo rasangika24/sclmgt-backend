@@ -1,12 +1,16 @@
 package com.bit.backend.dtos;
 
+import java.time.LocalDate;
+
 public class StudentDto {
 
     private Long id;
     private Long admissionNumber;
     private String nameinFull;
     private String nameWithInitials;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
+    private LocalDate dateofAdmission;
+    private String gender;
     private String address;
     private Integer telephone;
     private Integer whatsapp;
@@ -41,12 +45,14 @@ public class StudentDto {
     public StudentDto(){
     }
 
-    public StudentDto (Long id, Long admissionNumber, String nameinFull, String nameWithInitials, String dateOfBirth, String address, Integer telephone, Integer whatsapp, String emailAddress, String nic, String schoolStudied, String mothersName, String mothersSchool, String mothersEducationLevel, String mothersProfession, Integer mothersTelephone, Integer mothersWhatsapp, String fathersName, String fathersSchool, String fathersEducationLevel, String fathersProfession, Integer fathersTelephone, Integer fathersWhatsapp, String guardiansName, String guardiansSchool, String guardiansEducationLevel, String guardiansProfession, Integer  guardiansTelephone, Integer guardiansWhatsapp){
+    public StudentDto(Long id, Long admissionNumber, String nameinFull, String nameWithInitials, LocalDate dateOfBirth, LocalDate dateofAdmission, String gender, String address, Integer telephone, Integer whatsapp, String emailAddress, String nic, String schoolStudied, String mothersName, String mothersSchool, String mothersEducationLevel, String mothersProfession, Integer mothersTelephone, Integer mothersWhatsapp, String fathersName, String fathersSchool, String fathersEducationLevel, String fathersProfession, Integer fathersTelephone, Integer fathersWhatsapp, String guardiansName, String guardiansSchool, String guardiansEducationLevel, String guardiansProfession, Integer guardiansTelephone, Integer guardiansWhatsapp) {
         this.id = id;
         this.admissionNumber = admissionNumber;
         this.nameinFull = nameinFull;
         this.nameWithInitials = nameWithInitials;
         this.dateOfBirth = dateOfBirth;
+        this.dateofAdmission = dateofAdmission;
+        this.gender = gender;
         this.address = address;
         this.telephone = telephone;
         this.whatsapp = whatsapp;
@@ -71,14 +77,13 @@ public class StudentDto {
         this.guardiansProfession = guardiansProfession;
         this.guardiansTelephone = guardiansTelephone;
         this.guardiansWhatsapp = guardiansWhatsapp;
-
     }
 
-    public Long getid() {
+    public Long getId() {
         return id;
     }
 
-    public void setid(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -106,12 +111,28 @@ public class StudentDto {
         this.nameWithInitials = nameWithInitials;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public LocalDate getDateofAdmission() {
+        return dateofAdmission;
+    }
+
+    public void setDateofAdmission(LocalDate dateofAdmission) {
+        this.dateofAdmission = dateofAdmission;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getAddress() {
