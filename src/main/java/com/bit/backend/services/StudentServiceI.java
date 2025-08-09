@@ -11,5 +11,6 @@ public interface StudentServiceI {
     StudentDto updateStudent(long id, StudentDto studentDto);
     StudentDto deleteStudent(long id);
     boolean nicExists(String nic);
+    StudentDto findByAdmissionNumber(String admissionNumber);
 
 }

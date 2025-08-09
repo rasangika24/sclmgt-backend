@@ -109,4 +109,16 @@ public class StudentService implements StudentServiceI {
         return studentRepository.existsByNic(nic);
     }
 
+    @Override
+    public StudentDto findByAdmissionNumber(String admissionNumber) {
+        try {
+            return studentRepository.findByAdmissionNumber(admissionNumber)
+                    .map(studentMapper::toStudentDto)
+                    .orElseThrow(() -> new AppException("Student not found with admission number: " + admissionNumber, HttpStatus.NOT_FOUND));
+        } catch (Exception e) {
+            throw new AppException("Request failed with error: " + e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 }

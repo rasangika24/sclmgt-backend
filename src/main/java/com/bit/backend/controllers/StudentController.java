@@ -81,4 +81,16 @@ public class StudentController {
         return ResponseEntity.ok(exists);
     }
 
+
+    @GetMapping("/student/by-admission")
+    public ResponseEntity<StudentDto> getStudentByAdmissionNumber(@RequestParam String admissionNumber) {
+        try {
+            StudentDto studentDto = studentServiceI.findByAdmissionNumber(admissionNumber);
+            return ResponseEntity.ok(studentDto);
+        } catch (Exception e) {
+            throw new AppException("Request failed with error: " + e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 }
